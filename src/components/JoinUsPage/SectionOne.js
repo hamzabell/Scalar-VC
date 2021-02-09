@@ -7,6 +7,9 @@ const StyledButton = styled.button`
 `;
 
 function SectionOne(props) {
+  const openLink = (link) => {
+    window.open(link, "_blank");
+  };
   return (
     <div>
       <div className="text-xl font-medium md:w-96 ">
@@ -18,7 +21,16 @@ function SectionOne(props) {
         We are with you all through the ride.
       </div>
       <div className="mt-6">
-        <StyledButton className="w-52 h-14 text-xl">Startups</StyledButton>
+        <StyledButton
+          className="w-52 h-14 text-xl"
+          onClick={() =>
+            openLink(
+              "https://docs.google.com/forms/d/1IVRGs8NFvmrWjI067SOgHQQlonDHSdCnVcj5DGuhUOk/viewform?edit_requested=true"
+            )
+          }
+        >
+          Startups
+        </StyledButton>
       </div>
     </div>
   );

@@ -16,7 +16,7 @@ function Newletter(props) {
     <>
       <div className="flex flex-col items-center my-8  md:my-16 mx-6">
         <div className="text-lg  md:w-80 font-bold text-center">
-          Be the First To know about the latest ideas from students startups
+          Be the first To know about the latest ideas from students startups
         </div>
         <form onSubmit={onSubmit} className="flex mt-4">
           <input

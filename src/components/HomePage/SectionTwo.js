@@ -27,8 +27,8 @@ function SectionTwo(props) {
           your startup.
         </div>
         <div className="mt-4 md:mt-8">
-          Scarlar has a vast network of investors of all kinds and will help you
-          find the right investor for your startup
+          Scalar VC has a vast network of investors of all kinds and will help
+          you find the right investor for your startup.
         </div>
       </div>
       <ImageContainer className="md:col-span-4 md:flex md:justify-end">

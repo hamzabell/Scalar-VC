@@ -14,7 +14,7 @@ function SectionOne(props) {
     <>
       <div className="flex flex-col items-center">
         <div className="w-72 md:w-full text-2xl font-normal md:px-96 tracking-wider text-center">
-          We believe the next $1B companies are among Student startups
+          We believe the next $1B companies are among the Student startups
           ecosystem. We are daring enough to believe in them,fund them and
           support them to success.
         </div>

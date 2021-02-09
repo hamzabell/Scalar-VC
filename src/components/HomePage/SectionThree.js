@@ -39,7 +39,7 @@ function SectionThree(props) {
           ecosystem.
         </div>
         <div className="mt-4">
-          Get access to students startups ideas from around Africa. Vet them and
+          Get access to student startups ideas from around Africa, Vet them and
           invest in them
         </div>
       </div>

@@ -14,7 +14,7 @@ function AboutUs(props) {
     <div className="mt-28 mb-10">
       <h1 className="text-3xl font-bold text-center">About Scalar VC</h1>
       <div className="text-center text-xl mx-4 md:mx-0 md:px-96 mt-6 mb-14 ">
-        Scalar VC is a platform that connects students startups and ideas to the
+        Scalar VC is a platform that connects student startups and ideas to the
         right funding and opportunities in the space.
         <br />
         <br />
@@ -37,6 +37,8 @@ function AboutUs(props) {
             partnerName="emeka"
             name="Ehinze Emeka"
             role="Founder / Product Manager"
+            linkedIn="https://www.linkedin.com/in/emeka-ehinze-the-black-tiger-b1183bb0"
+            twitter="https://twitter.com/EhinzeEmeka?s=09"
             description="Emeka is an ex  Product Leader and lead faculty at Eko Innovation Center with expertise in Product management and advocacy for product managers within Africa."
           />
         </div>
