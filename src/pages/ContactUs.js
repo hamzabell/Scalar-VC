@@ -16,9 +16,28 @@ function ContactUs(props) {
         <div className="flex flex-col space-y-4 mb-32">
           <div className="text-3xl font-bold text-center">Contact us</div>
           <div className="flex justify-center space-x-8 text-white mb-3 mt-6">
-            <FaLinkedin className="h-6 w-6" color="#0A0E3A" />
-            <FaTwitter className="h-6 w-6" color="#0A0E3A" />
-            <HiMail className="h-6 w-6" color="#0A0E3A" />
+            <FaLinkedin
+              className="h-6 w-6 cursor-pointer"
+              color="#0A0E3A"
+              onClick={() =>
+                window.open(
+                  "https://www.linkedin.com/company/scalar-vc",
+                  "_blank"
+                )
+              }
+            />
+            <FaTwitter
+              className="h-6 w-6 cursor-pointer"
+              color="#0A0E3A"
+              onClick={() =>
+                window.open("https://twitter.com/scalarvc?s=09", "_blank")
+              }
+            />
+            <HiMail
+              className="h-6 w-6 cursor-pointer"
+              color="#0A0E3A"
+              onClick={() => window.open("mailto:hello@scalarvc.com", "_blank")}
+            />
           </div>
         </div>
         <div className="flex flex-col md:flex-row mx-6">
