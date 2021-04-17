@@ -66,7 +66,7 @@ function ContactUsForm(props) {
           recieverMail: "hello@scalarvc.com",
           senderMail: formData.email,
           message: formData.message,
-          senderName: formData.name,
+          senderName: `${formData.who} ${formData.name}`,
         })
         .then((res) => {
           setIsLoading(false);
