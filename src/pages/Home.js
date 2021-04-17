@@ -5,6 +5,7 @@ import {
   SectionThree,
   SectionFour,
   Newsletter,
+  Partners,
 } from "../components/HomePage";
 
 function HomePage(props) {
@@ -20,6 +21,10 @@ function HomePage(props) {
         <h1 className="md:text-3xl">What we offer</h1>
       </div>
       <SectionFour />
+      <div className="mt-16 mb-6 flex justify-center text-xl font-semibold">
+        <h1 className="md:text-3xl">Our Partner(s)</h1>
+      </div>
+      <Partners />
       <Newsletter />
     </div>
   );

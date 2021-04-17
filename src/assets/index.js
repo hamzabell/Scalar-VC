@@ -15,6 +15,7 @@ import ScalarLarge from "./scalar-large.png";
 import JoinBannerLarge from "./Joinus-large.png";
 import ImageOneLarge from "./ImageOne-large.png";
 import ImageTwoLarge from "./ImageTwo-lage.png";
+import Andaa from "./andaa.png";
 
 export {
   Logo,
@@ -34,4 +35,5 @@ export {
   JoinBannerLarge,
   ImageOneLarge,
   ImageTwoLarge,
+  Andaa,
 };

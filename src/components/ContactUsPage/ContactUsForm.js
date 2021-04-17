@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { FaPaperPlane } from "react-icons/fa";
+import Loader from "react-loader-spinner";
+import { toast } from "react-toastify";
+import axios from "axios";
 
 const StyledForm = styled.form`
   color: #0a0e3a;
@@ -36,8 +39,12 @@ const INITIAL_FORM_STATE = {
   who: "investor",
   message: "",
 };
+
+const MAIL_URL = "https://mailerkay.herokuapp.com/mail/send";
+
 function ContactUsForm(props) {
   const [formData, setFormData] = useState(INITIAL_FORM_STATE);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData((prev) => ({
@@ -48,7 +55,32 @@ function ContactUsForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    setIsLoading(true);
+
+    const isFormValid =
+      formData.email !== "" && formData.name !== "" && formData.message !== "";
+
+    if (isFormValid) {
+      axios
+        .post(MAIL_URL, {
+          recieverMail: "hello@scalarvc.com",
+          senderMail: formData.email,
+          message: formData.message,
+          senderName: formData.name,
+        })
+        .then((res) => {
+          setIsLoading(false);
+          toast.success("🚀 We will get in touch soon. Welcome to Scalar VC");
+          setFormData(INITIAL_FORM_STATE);
+        })
+        .catch((err) => {
+          setIsLoading(false);
+          toast.info("🚀 Hey it's not you,it's us.Please try that again!");
+        });
+    } else {
+      setIsLoading(false);
+      toast.info("🚀 You are almost there! Please fill the required fields.");
+    }
   };
   return (
     <StyledForm
@@ -104,8 +136,21 @@ function ContactUsForm(props) {
         type="submit"
         className="text-2xl font-semibold py-6 w-full"
       >
-        <FaPaperPlane className="mr-3" />
-        Send Message
+        <div className="space-x-3 flex">
+          <div className="flex">
+            <FaPaperPlane className="mr-3" />
+            <span>Send Message</span>
+          </div>
+          {isLoading && (
+            <Loader
+              type="Oval"
+              color="#ffffff"
+              height={20}
+              width={20}
+              className="mt-1"
+            />
+          )}
+        </div>
       </StyledButton>
     </StyledForm>
   );
