@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { ImageTwo, ImageTwoLarge } from "../../assets";
+import { useImageContext } from "../../context";
 
 const StyledDiv = styled.div`
   background: #0a0e3a;
@@ -16,14 +17,22 @@ const ImageContainer = styled.div`
 `;
 
 function SectionThree(props) {
+  const [imageStatus, setImageStatus] = useImageContext();
+
   return (
     <StyledDiv className="flex flex-col-reverse md:grid md:grid-cols-6 pt-12 md:pt-0 px-4 md:gap-12 md:pr-52 md:px-0">
       <ImageContainer className="md:col-span-4 md:flex md:justify-start">
-        <img src={ImageTwo} alt="amebo women" className="m-0 md:hidden" />
+        <img
+          src={ImageTwo}
+          alt="amebo women"
+          className="m-0 md:hidden"
+          onLoad={() => setImageStatus("loaded")}
+        />
         <img
           src={ImageTwoLarge}
           alt="computer teaching"
           className="m-0 hidden md:block"
+          onLoad={() => setImageStatus("loaded")}
         />
       </ImageContainer>
       <div className="md:col-span-2 mb-20 md:mt-32">

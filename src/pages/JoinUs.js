@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Banner, SectionOne, SectionTwo } from "../components/JoinUsPage";
+import { useImageContext } from "../context";
 
 function JoinPage(props) {
+  const [imageStatus, setImageStatus] = useImageContext();
+
+  useEffect(() => {
+    setImageStatus("loaded");
+    return () => {
+      setImageStatus("not-loaded");
+    };
+  }, []);
   return (
     <div className="mt-16">
       <Banner />

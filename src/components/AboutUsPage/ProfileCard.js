@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Blessing, Emeka, Korede, Akan, Samuel } from "../../assets";
 import { FaTwitter, FaLinkedin } from "react-icons/fa";
+import { useImageContext } from "../../context";
 
 const StyledTitle = styled.div`
   color: #11b583;
@@ -28,6 +29,8 @@ function ProfileCard({
   twitter,
   linkedIn,
 }) {
+  const [imageStatus, setImageStatus] = useImageContext();
+
   const vistSocialLink = (link) => {
     if (link) {
       window.open(link, "_blank");
@@ -43,6 +46,7 @@ function ProfileCard({
               src={partnerGuests[partnerName]}
               alt="partner"
               className="w-44 h-44"
+              onLoad={() => setImageStatus("loaded")}
             />
           </StyledImageContainer>
         </div>

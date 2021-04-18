@@ -7,8 +7,8 @@ import {
   withRouter,
 } from "react-router-dom";
 import { HomePage, JoinUsPage, AboutUs, ContactUs } from "./pages";
-import { useMenuContext } from "./context";
-import { MobileMenu, Header, Footer } from "./components";
+import { useMenuContext, useImageContext } from "./context";
+import { MobileMenu, Header, Footer, Loader } from "./components";
 import { Global } from "./styled";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -25,6 +25,7 @@ const ScrollToTop = withRouter(_ScrollToTop);
 
 function App() {
   const [isMenuOpen] = useMenuContext();
+  const [imageStatus] = useImageContext();
   return (
     <Router>
       <ScrollToTop>
@@ -37,6 +38,7 @@ function App() {
           newestOnTop={false}
           closeOnClick
         />
+        {imageStatus !== "loaded" && <Loader />}
 
         {isMenuOpen && <MobileMenu />}
         <Switch>

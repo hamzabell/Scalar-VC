@@ -1,15 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaTwitter, FaLinkedin } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
 import styled from "styled-components";
 import { CntactUs } from "../assets";
 import { ContactUsForm } from "../components/ContactUsPage";
+import { useImageContext } from "../context";
 
 const ContactusWrapper = styled.div`
   color: #0a0e3a;
 `;
 
 function ContactUs(props) {
+  const [imageStatus, setImageStatus] = useImageContext();
+
+  useEffect(() => {
+    return () => {
+      setImageStatus("not-loaded");
+    };
+  }, []);
   return (
     <ContactusWrapper className="mt-28">
       <div className="flex flex-col">
@@ -42,7 +50,11 @@ function ContactUs(props) {
         </div>
         <div className="flex flex-col md:flex-row mx-6">
           <div className="flex flex-col mb-14 items-center md:justify-center  w-full">
-            <img src={CntactUs} alt="contact" />
+            <img
+              src={CntactUs}
+              alt="contact"
+              onLoad={() => setImageStatus("loaded")}
+            />
             <div className="text-3xl font-bold mt-8 md:w-64 w-full text-center ">
               Have a question? Get in touch
             </div>

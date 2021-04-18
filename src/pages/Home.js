@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   SectionOne,
   SectionTwo,
@@ -7,8 +7,17 @@ import {
   Newsletter,
   Partners,
 } from "../components/HomePage";
+import { useImageContext } from "../context";
 
 function HomePage(props) {
+  const [imageStatus, setImageStatus] = useImageContext();
+
+  useEffect(() => {
+    return () => {
+      setImageStatus("not-loaded");
+    };
+  }, []);
+
   return (
     <div className="mt-28">
       <SectionOne />

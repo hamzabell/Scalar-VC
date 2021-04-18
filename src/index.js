@@ -2,12 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import "./index.css";
-import { MenuProvider } from "./context";
+import { MenuProvider, ImageProvider } from "./context";
 
 ReactDOM.render(
   <React.StrictMode>
     <MenuProvider>
-      <App />
+      <ImageProvider>
+        <App />
+      </ImageProvider>
     </MenuProvider>
   </React.StrictMode>,
   document.getElementById("root")

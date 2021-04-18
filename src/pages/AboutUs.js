@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { ProfileCard } from "../components/AboutUsPage";
 import { useHistory } from "react-router-dom";
+import { useImageContext } from "../context";
 
 const StyledButton = styled.button`
   background: #0a0e3a;
@@ -10,6 +11,13 @@ const StyledButton = styled.button`
 
 function AboutUs(props) {
   const history = useHistory();
+  const [imageStatus, setImageStatus] = useImageContext();
+
+  useEffect(() => {
+    return () => {
+      setImageStatus("not-loaded");
+    };
+  }, []);
   return (
     <div className="mt-28 mb-10">
       <h1 className="text-3xl font-bold text-center">About Scalar VC</h1>
